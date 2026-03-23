@@ -7,17 +7,18 @@
 
 /* ── Variables (Ocean default — JS overrides on theme switch) ── */
 :root {
-  --bg:      #080f11;
-  --surface: #0d1a1e;
-  --border:  #122228;
-  --border2: #1a3040;
-  --text:    #f0ede8;
-  --muted:   #8aaa9a;
-  --dimmed:  #3a6a6e;
-  --faint:   #2a5060;
-  --accent:  #2a8fa0;
-  --green:   #bada55;
-  --orange:  #e8673a;
+  --bg:           #080f11;
+  --surface:      #0d1a1e;
+  --border:       #122228;
+  --border2:      #1a3040;
+  --text:         #f0ede8;
+  --muted:        #8aaa9a;
+  --dimmed:       #67877f;
+  --faint:        #2a5060;
+  --accent:       #2a8fa0;
+  --accent-text:  #080f11;
+  --green:        #bada55;
+  --orange:       #e8673a;
 }
 
 /* ── Base ── */
@@ -234,7 +235,7 @@ nav {
   cursor: pointer;
 }
 
-.btn-primary { background: var(--accent); color: var(--bg); }
+.btn-primary { background: var(--accent); color: var(--accent-text); }
 .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
 
 .btn-secondary {
@@ -357,7 +358,7 @@ nav {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--bg);
+  color: var(--accent-text);
 }
 
 .p-nav {
