@@ -1,0 +1,15 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="190" fill="#080f11"/>
+  <text x="258" y="400"
+        font-family="system-ui,-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif"
+        font-weight="900" font-size="275"
+        fill="#f0ede8" text-anchor="middle">NO</text>
+  <text x="766" y="400"
+        font-family="system-ui,-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif"
+        font-weight="900" font-size="275"
+        fill="#2a8fa0" text-anchor="middle">BS</text>
+  <text x="512" y="870"
+        font-family="system-ui,-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif"
+        font-weight="900" font-size="250"
+        fill="#8a8a8a" text-anchor="middle">IF</text>
+</svg>
