@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Accessibility Commitment — NO BS IF. Every feature supports the full range of assistive technologies, by default, without compromise.">
+<title>Accessibility — NO BS IF</title>
+<link rel="icon" type="image/svg+xml" href="/nobsif-icon.svg"/>
+<link rel="apple-touch-icon" href="/nobsif-icon.png"/>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nobsif.app/accessibility">
+<meta property="og:title" content="Accessibility — NO BS IF">
+<meta property="og:description" content="Every feature supports the full range of assistive technologies, by default, without compromise.">
+<meta property="og:image" content="https://nobsif.app/nobsif-icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Accessibility — NO BS IF">
+<meta name="twitter:description" content="Every feature supports the full range of assistive technologies, by default, without compromise.">
+<meta name="twitter:image" content="https://nobsif.app/nobsif-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  body { line-height: 1.7; }
+  .doc-container { max-width: 720px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* ── Header ── */
+  .doc-header { padding: 64px 0 48px; }
+
+  .doc-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--dimmed);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .doc-eyebrow::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .doc-title {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .doc-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--dimmed);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Intro card ── */
+  .intro-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+  .intro-card p { font-size: 17px; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 14px; }
+  .intro-card p:last-child { margin-bottom: 0; }
+  .intro-card strong { color: var(--text); font-weight: 500; }
+
+  /* ── Sections ── */
+  .doc-section { margin-bottom: 52px; }
+
+  .section-heading {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-num { color: var(--accent); font-size: 11px; letter-spacing: 0.1em; flex-shrink: 0; }
+
+  .doc-body { font-size: 17px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+  .doc-body p { margin-bottom: 16px; }
+  .doc-body p:last-child { margin-bottom: 0; }
+  .doc-body strong { color: var(--text); font-weight: 500; }
+
+  .doc-body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+  .doc-body ul li { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); }
+  .doc-body ul li::before {
+    content: '&#10003;';
+    color: var(--accent);
+    flex-shrink: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    margin-top: 3px;
+  }
+
+  /* ── Statement box ── */
+  .statement {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 8px 0 52px;
+  }
+  .statement p { font-size: 17px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+  .statement strong { color: var(--text); font-weight: 500; }
+
+  /* ── Contact card ── */
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .contact-email {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: opacity 0.2s;
+  }
+  .contact-email:hover { opacity: 0.8; }
+
+  .contact-note { font-size: 14px; color: var(--dimmed); font-weight: 300; max-width: 280px; line-height: 1.5; }
+
+  /* ── Footer ── */
+  .doc-footer-wrap { position: relative; z-index: 1; }
+
+  @media (max-width: 600px) {
+    .doc-container { padding: 0 20px; }
+    body { font-size: 16px; }
+    .intro-card { padding: 20px; }
+    .contact-card { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<!-- ══ STICKY NAV ══ -->
+<div id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-no">NO </span><span class="nav-logo-bs">BS</span><span class="nav-logo-if">IF</span>
+      </a>
+      <div class="nav-links">
+        <a href="/#features" class="nav-link">FEATURES</a>
+        <a href="/#pricing" class="nav-link">PRICING</a>
+        <a href="/#themes" class="nav-link">THEMES</a>
+        <a href="https://skipthebs.app" class="nav-link nav-link-ext">SKIP THE BS &#8594;</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <a href="/#features" class="nav-mobile-link">FEATURES</a>
+      <a href="/#pricing" class="nav-mobile-link">PRICING</a>
+      <a href="/#themes" class="nav-mobile-link">THEMES</a>
+      <div class="nav-mobile-section">PAGES</div>
+      <a href="/privacy" class="nav-mobile-link util">PRIVACY POLICY</a>
+      <a href="/accessibility" class="nav-mobile-link util">ACCESSIBILITY</a>
+      <a href="/faq" class="nav-mobile-link util">FAQ</a>
+      <div class="nav-mobile-section">COMPANY</div>
+      <a href="https://skipthebs.app" class="nav-mobile-link util">SKIP THE BS &#8599;</a>
+    </div>
+  </div>
+</div>
+
+<div class="doc-container">
+
+  <div class="doc-header">
+    <div class="doc-eyebrow">OUR COMMITMENT</div>
+    <h1 class="doc-title">ACCES&shy;SI&shy;BIL&shy;ITY</h1>
+    <div class="doc-meta">NO BS IF &#8212; MARCH 2026</div>
+  </div>
+
+  <div class="intro-card">
+    <p><strong>Every feature in NO BS IF supports the full range of assistive technologies, by default, without exception.</strong> This is not something we added at the end &#8212; it is part of how we build from day one.</p>
+    <p>Accessibility is a company-wide standard at Skip the BS, not a per-app decision. Every app in our suite is held to the same requirements. Where Apple and Google set the bar, we try to go further.</p>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">01</span> VoiceOver &amp; Screen Reader Support</div>
+    <div class="doc-body">
+      <p>Every interactive element carries a meaningful accessibility label. Timers read out in plain language &#8212; not just digits, but duration and context. Progress indicators, streak counters, status badges, navigation items, and buttons all have descriptive labels that convey purpose and current state, not just visual appearance.</p>
+      <p>We test with VoiceOver on iOS and TalkBack on Android throughout development &#8212; not as a final checklist, but as part of how we build.</p>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">02</span> Voice Control</div>
+    <div class="doc-body">
+      <p>NO BS IF is fully navigable by voice. Every button and interactive element has a clear, unique label that iOS Voice Control and Android Voice Access can target without ambiguity. Every core action &#8212; starting a fast, ending a fast, changing settings &#8212; can be completed entirely by voice, no touch required.</p>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">03</span> Dynamic Type &amp; Larger Text</div>
+    <div class="doc-body">
+      <p>NO BS IF fully respects your system font size preference. Whether you&#8217;re on the default size or the largest accessibility setting, layouts adapt. Text never clips. Buttons never overlap. No content becomes unreachable at any size. We test at the full range of Dynamic Type sizes on every screen before shipping.</p>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">04</span> Reduced Motion</div>
+    <div class="doc-body">
+      <p>NO BS IF respects the Reduce Motion system setting on both iOS and Android. When enabled, animations and transitions are simplified or removed entirely. Motion is always decorative &#8212; never functional. You never need to see an animation to understand what&#8217;s happening.</p>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">05</span> Sufficient Contrast</div>
+    <div class="doc-body">
+      <p>Every visual theme &#8212; free or paid &#8212; is validated against WCAG 2.1 AA contrast requirements before release. Text on backgrounds, UI elements on surfaces, status indicators in context &#8212; all checked.</p>
+      <p>We never ship a theme that looks good but fails contrast. Paid themes are held to exactly the same standard as free defaults. Aesthetics and accessibility are not a trade-off.</p>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">06</span> Dark &amp; Light Interface</div>
+    <div class="doc-body">
+      <p>NO BS IF ships with a dark interface as the default &#8212; a deliberate choice that reduces eye strain, particularly for users with light sensitivity or certain visual impairments.</p>
+      <p><strong>Light mode is free.</strong> The ICE theme ships free alongside Ocean. Light mode access is never paywalled. Accessibility is the floor, not a feature.</p>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">07</span> Colour Is Never the Only Signal</div>
+    <div class="doc-body">
+      <p>We never rely on colour alone to communicate information. Every state and status is conveyed through at least two signals &#8212; colour plus shape, weight, or text. If you removed all colour from NO BS IF, every piece of information would still be accessible.</p>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">08</span> The Thoughtful Stuff</div>
+    <div class="doc-body">
+      <p>Beyond the standard requirements, a few things we went out of our way to get right:</p>
+      <ul>
+        <li>Informal UI subtitles are optional and can be switched off &#8212; they&#8217;re personality, not required context</li>
+        <li>The fasting ring communicates progress through fill level, colour, and a text readout &#8212; users who can&#8217;t rely on any one signal still have the others</li>
+        <li>Swipe gestures have accessible alternatives &#8212; no action is swipe-only</li>
+        <li>Haptic feedback respects system haptic preferences and can be disabled</li>
+        <li>All tappable elements meet or exceed the 44&#215;44pt minimum touch target size</li>
+        <li>Focus order is logical and matches the visual layout throughout</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="statement">
+    <p><strong>Accessibility is not a feature. It&#8217;s the floor.</strong> Every app we build starts here. The people who rely on these tools deserve software that was actually designed with them in mind &#8212; not software that technically passes a scan the week before submission.</p>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-heading"><span class="section-num">09</span> Something Not Working?</div>
+    <div class="doc-body">
+      <p>If you encounter an accessibility issue, please tell us. A real person reads every message. We take these reports seriously and will prioritise fixes.</p>
+    </div>
+    <div class="contact-card">
+      <a href="mailto:hello@skipthebs.app" class="contact-email">hello@skipthebs.app</a>
+      <div class="contact-note">A real person reads every message. You&#8217;ll get a genuine reply.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="doc-footer-wrap">
+  <div class="container">
+    <footer>
+      <div class="footer-inner">
+        <a href="/" class="footer-logo"><span class="nav-logo-no">NO </span><span class="nav-logo-bs">BS</span><span class="nav-logo-if">IF</span></a>
+        <div class="footer-links">
+          <a href="/privacy" class="footer-link">PRIVACY</a>
+          <a href="/accessibility" class="footer-link">ACCESSIBILITY</a>
+          <a href="/faq" class="footer-link">FAQ</a>
+          <a href="https://skipthebs.app/#support" class="footer-link">SUPPORT</a>
+          <a href="https://skipthebs.app" class="footer-link">SKIP THE BS &#8599;</a>
+        </div>
+        <div class="footer-copy">&#169; 2026 SKIP THE BS</div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script src="/main.js"></script>
+</body>
+</html>

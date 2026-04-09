@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FAQ — NO BS IF. Straight answers, no runaround.">
+<title>FAQ — NO BS IF</title>
+<link rel="icon" type="image/svg+xml" href="/nobsif-icon.svg"/>
+<link rel="apple-touch-icon" href="/nobsif-icon.png"/>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nobsif.app/faq">
+<meta property="og:title" content="FAQ — NO BS IF">
+<meta property="og:description" content="Straight answers, no runaround.">
+<meta property="og:image" content="https://nobsif.app/nobsif-icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FAQ — NO BS IF">
+<meta name="twitter:description" content="Straight answers, no runaround.">
+<meta name="twitter:image" content="https://nobsif.app/nobsif-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  body { line-height: 1.7; }
+  .doc-container { max-width: 720px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* ── Header ── */
+  .doc-header { padding: 64px 0 48px; }
+
+  .doc-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--dimmed);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .doc-eyebrow::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .doc-title {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .doc-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--dimmed);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── FAQ groups ── */
+  .faq-group { margin-bottom: 56px; }
+
+  .faq-group-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--dimmed);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .faq-group-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ── FAQ items ── */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+  .faq-item:first-of-type { border-top: 1px solid var(--border); }
+
+  .faq-q {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.01em;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .faq-a { font-size: 16px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+  .faq-a p { margin-bottom: 10px; }
+  .faq-a p:last-child { margin-bottom: 0; }
+  .faq-a strong { color: var(--text); font-weight: 500; }
+
+  /* ── Contact card ── */
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .contact-email {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: opacity 0.2s;
+  }
+  .contact-email:hover { opacity: 0.8; }
+
+  .contact-note { font-size: 14px; color: var(--dimmed); font-weight: 300; max-width: 280px; line-height: 1.5; }
+
+  /* ── Footer ── */
+  .doc-footer-wrap { position: relative; z-index: 1; }
+
+  @media (max-width: 600px) {
+    .doc-container { padding: 0 20px; }
+    body { font-size: 16px; }
+    .contact-card { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<!-- ══ STICKY NAV ══ -->
+<div id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-no">NO </span><span class="nav-logo-bs">BS</span><span class="nav-logo-if">IF</span>
+      </a>
+      <div class="nav-links">
+        <a href="/#features" class="nav-link">FEATURES</a>
+        <a href="/#pricing" class="nav-link">PRICING</a>
+        <a href="/#themes" class="nav-link">THEMES</a>
+        <a href="https://skipthebs.app" class="nav-link nav-link-ext">SKIP THE BS &#8594;</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <a href="/#features" class="nav-mobile-link">FEATURES</a>
+      <a href="/#pricing" class="nav-mobile-link">PRICING</a>
+      <a href="/#themes" class="nav-mobile-link">THEMES</a>
+      <div class="nav-mobile-section">PAGES</div>
+      <a href="/privacy" class="nav-mobile-link util">PRIVACY POLICY</a>
+      <a href="/accessibility" class="nav-mobile-link util">ACCESSIBILITY</a>
+      <a href="/faq" class="nav-mobile-link util">FAQ</a>
+      <div class="nav-mobile-section">COMPANY</div>
+      <a href="https://skipthebs.app" class="nav-mobile-link util">SKIP THE BS &#8599;</a>
+    </div>
+  </div>
+</div>
+
+<div class="doc-container">
+
+  <div class="doc-header">
+    <div class="doc-eyebrow">STRAIGHT ANSWERS</div>
+    <h1 class="doc-title">FAQ</h1>
+    <div class="doc-meta">NO BS IF</div>
+  </div>
+
+  <!-- The model -->
+  <div class="faq-group">
+    <div class="faq-group-label">THE MODEL</div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is the app really free forever?</div>
+      <div class="faq-a">
+        <p><strong>Yes.</strong> Core functionality is free with no expiry date, no trial period, and no account required. The app that does what it says on the tin is the free version. That's the whole point.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is there a subscription?</div>
+      <div class="faq-a">
+        <p><strong>No.</strong> There is a one-time in-app purchase for extras — themes, widgets, and anything we add in future. You pay once. You own it. We will not introduce a subscription tier later. That's a commitment, not a marketing line.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What does the one-time unlock include?</div>
+      <div class="faq-a">
+        <p>All 7 additional themes (ICE, MOSS, SOIL, GLAM, SOLAR, CRIMSON, GRAPHITE), the home screen widget, and any themes or features we release in the future. One purchase, no renewals, no tiers.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Will you add ads later?</div>
+      <div class="faq-a">
+        <p><strong>No.</strong> Ads are incompatible with the product we're building. The business model is one-time purchases. That's it.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What platforms do you support?</div>
+      <div class="faq-a">
+        <p>iOS and Android. We ship on both. There's no web app — NO BS IF is a native mobile app.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy -->
+  <div class="faq-group">
+    <div class="faq-group-label">PRIVACY</div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do you collect any of my data?</div>
+      <div class="faq-a">
+        <p><strong>Nothing.</strong> No analytics, no crash reporting, no advertising identifiers, no third-party tracking SDKs. We have no idea how many people use the app or how they use it. This is a deliberate choice, not an oversight.</p>
+        <p>Full details in our <a href="/privacy" class="text-link">privacy policy</a>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do I need an account?</div>
+      <div class="faq-a">
+        <p><strong>No.</strong> No sign-up, no email, no login. You open the app and it works.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Where is my data stored?</div>
+      <div class="faq-a">
+        <p>On your device. Nowhere else. We don't have servers storing your fasting history because we don't need them — the app works entirely offline.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What happens to my data if I uninstall?</div>
+      <div class="faq-a">
+        <p>It's gone with the app. Export your data first if you want to keep it or move it to another device. You'll find the export option in Settings.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="faq-group">
+    <div class="faq-group-label">HOW IT WORKS</div>
+
+    <div class="faq-item">
+      <div class="faq-q">What fasting protocols does it support?</div>
+      <div class="faq-a">
+        <p>You set your own target duration. 16:8, 18:6, 24 hours, anything — you decide. The app is a timer, not a protocol enforcer. It doesn't care which method you use.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if I forgot to start the timer?</div>
+      <div class="faq-a">
+        <p>Fix It mode lets you set any start time in the past. Forgot to tap when you started? Set it to when you actually started and the timer catches up.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Does it sync across devices?</div>
+      <div class="faq-a">
+        <p>No cloud sync. Your data stays on your device. To move to a new phone, export from the old one and import on the new one. You're in control of where your data goes.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How does the streak work?</div>
+      <div class="faq-a">
+        <p>Every calendar day you complete a fast counts toward your streak. Miss a day and it resets. No partial credit, no grace periods — an honest count.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I export my data?</div>
+      <div class="faq-a">
+        <p>Yes. Export your full history as a file from Settings. Import it again on any device running NO BS IF. Your data, your format, no lock-in.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Support -->
+  <div class="faq-group">
+    <div class="faq-group-label">SUPPORT</div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I report a bug?</div>
+      <div class="faq-a">
+        <p>Email us. Tell us what happened, what you expected, and what device and OS version you're on. A real person reads every message.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do you take feature requests?</div>
+      <div class="faq-a">
+        <p>Yes, via email. We can't promise we'll build everything, but we read everything. If a lot of people ask for the same thing and it fits the philosophy, it gets considered.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Something's not answered here.</div>
+      <div class="faq-a">
+        <p>Email us. We reply.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <a href="mailto:hello@skipthebs.app" class="contact-email">hello@skipthebs.app</a>
+    <div class="contact-note">A real person reads every message. You'll get a genuine reply.</div>
+  </div>
+
+</div>
+
+<div class="doc-footer-wrap">
+  <div class="container">
+    <footer>
+      <div class="footer-inner">
+        <a href="/" class="footer-logo"><span class="nav-logo-no">NO </span><span class="nav-logo-bs">BS</span><span class="nav-logo-if">IF</span></a>
+        <div class="footer-links">
+          <a href="/privacy" class="footer-link">PRIVACY</a>
+          <a href="/accessibility" class="footer-link">ACCESSIBILITY</a>
+          <a href="/faq" class="footer-link">FAQ</a>
+          <a href="https://skipthebs.app/#support" class="footer-link">SUPPORT</a>
+          <a href="https://skipthebs.app" class="footer-link">SKIP THE BS &#8599;</a>
+        </div>
+        <div class="footer-copy">&#169; 2026 SKIP THE BS</div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script src="/main.js"></script>
+</body>
+</html>
