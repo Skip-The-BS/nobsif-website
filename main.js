@@ -35,6 +35,12 @@ sections.forEach(id => {
   if (el) sectionObserver.observe(el);
 });
 
+// Active state for current page link
+const currentPath = window.location.pathname;
+document.querySelectorAll('.nav-link').forEach(link => {
+  if (link.getAttribute('href') === currentPath) link.classList.add('active');
+});
+
 // Hybrid nav: smooth scroll on homepage, navigate on other pages
 document.querySelectorAll('a[href^="/#"]').forEach(link => {
   link.addEventListener('click', e => {
