@@ -240,6 +240,7 @@ body::before {
   transition: color 0.2s;
 }
 .nav-mobile-link:hover { color: var(--accent); }
+.nav-mobile-link.active { color: var(--accent); }
 .nav-mobile-link.util { font-size: 13px; font-weight: 400; color: var(--dimmed); padding: 12px 0; }
 .nav-mobile-link.util:hover { color: var(--text); }
 .nav-mobile-section { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--faint); padding: 20px 0 4px; }

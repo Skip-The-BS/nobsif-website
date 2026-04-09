@@ -18,7 +18,7 @@ window.addEventListener('scroll', () => {
 
 // Active nav link on scroll
 const sections = ['features', 'pricing', 'themes'];
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link, .nav-mobile-link');
 
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -37,7 +37,7 @@ sections.forEach(id => {
 
 // Active state for current page link
 const currentPath = window.location.pathname;
-document.querySelectorAll('.nav-link').forEach(link => {
+document.querySelectorAll('.nav-link, .nav-mobile-link').forEach(link => {
   if (link.getAttribute('href') === currentPath) link.classList.add('active');
 });
 
