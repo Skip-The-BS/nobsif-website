@@ -23,12 +23,12 @@ Pure HTML/CSS/JS. No frameworks. No build step. Deploy by dragging to Netlify or
 - Fix-the-time: if you forgot to start, you can correct it after
 - History and stats
 - Import / export (your data, your device, goes where you go)
-- 8 themes (Ocean default free; 7 more as a single one-time unlock)
+- 8 themes total: Ocean default plus ICE light mode free; 6 more as a single one-time unlock
 - No ads. No subscription. No coaching. No community.
 
 **Pricing:**
-- Free tier: full core app, Ocean theme, history, notifications, import/export
-- One-time unlock ($0.99): all 7 additional themes + any future themes + home screen widget
+- Free tier: full core app, Ocean and ICE themes, history, notifications, import/export
+- One-time unlock ($0.99): all 6 additional themes + any future themes + home screen widget
 
 ---
 
@@ -92,7 +92,7 @@ Utility pages (privacy, accessibility, faq) follow the same pattern:
 | Theme    | Accent    | Bg        | Type      | Status       |
 |----------|-----------|-----------|-----------|--------------|
 | OCEAN    | #2a8fa0   | #080f11   | Dark      | FREE DEFAULT |
-| ICE      | #1a8aa8   | #f8fdff   | **Light** | One-time     |
+| ICE      | #1a8aa8   | #f8fdff   | **Light** | FREE         |
 | MOSS     | #bada55   | #0d1a0f   | Dark      | One-time     |
 | SOIL     | #8b5e3c   | #110c08   | Dark      | One-time     |
 | GLAM     | #d47fa6   | #1a0d14   | Dark      | One-time     |
