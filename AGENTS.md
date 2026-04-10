@@ -22,7 +22,7 @@ Pure HTML/CSS/JS. No frameworks. No build step. Deploy by dragging to Netlify or
 - Streak counter
 - Fix-the-time: if you forgot to start, you can correct it after
 - History and stats
-- Import / export (your data, your device, goes where you go)
+- Free import / export (your data, your device, goes where you go)
 - Ocean default plus ICE light mode free, with additional themes available as a single one-time unlock
 - No ads. No subscription. No coaching. No community.
 
