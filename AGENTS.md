@@ -18,6 +18,8 @@ Pure HTML/CSS/JS. No frameworks. No build step. Deploy by dragging to Netlify or
 
 **NO BS IF** does one thing: intermittent fasting tracking.
 
+- Build for the owner first: high quality, high efficiency, no wasted motion, no fluff.
+- The app should feel sharp, capable, and no-bullshit rather than "wellness brand."
 - Timer that fills a ring as the fast progresses
 - Streak counter
 - Fix-the-time: if you forgot to start, you can correct it after
@@ -29,6 +31,11 @@ Pure HTML/CSS/JS. No frameworks. No build step. Deploy by dragging to Netlify or
 **Pricing:**
 - Free tier: full core app, Ocean and ICE themes, history, notifications, import/export
 - One-time unlock ($0.99): additional themes + any future themes + home screen widget
+
+Pricing / copy guardrails:
+- Import / export is free. Never imply it belongs to the paid unlock.
+- Keep theme language open-ended. Do not anchor messaging to a fixed count.
+- Do not hardcode localized price strings in app-facing guidance when store / RevenueCat pricing can provide the real regional amount.
 
 ---
 
