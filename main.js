@@ -1,44 +1,57 @@
-// Scroll reveal
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+// Scroll reveal
+if (prefersReducedMotion) {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+} else {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
 
 // Sticky nav shadow on scroll
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-});
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
 
 // Active nav link on scroll
 const sections = ['features', 'pricing', 'themes'];
 const navLinks = document.querySelectorAll('.nav-link, .nav-mobile-link');
 
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '/#' + entry.target.id);
-      });
-    }
-  });
-}, { threshold: 0.4 });
+if (!prefersReducedMotion) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '/#' + entry.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
 
-sections.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) sectionObserver.observe(el);
-});
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+}
 
 // Active state for current page link
 const currentPath = window.location.pathname;
 document.querySelectorAll('.nav-link, .nav-mobile-link').forEach(link => {
-  if (link.getAttribute('href') === currentPath) link.classList.add('active');
+  if (link.getAttribute('href') === currentPath) {
+    link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
+  }
 });
 
 // Hybrid nav: smooth scroll on homepage, navigate on other pages
@@ -48,7 +61,7 @@ document.querySelectorAll('a[href^="/#"]').forEach(link => {
     const target = document.getElementById(id);
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
       history.pushState(null, '', link.getAttribute('href'));
     }
   });
@@ -58,19 +71,21 @@ document.querySelectorAll('a[href^="/#"]').forEach(link => {
 const burger = document.getElementById('navBurger');
 const mobileMenu = document.getElementById('navMobile');
 
-burger.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  burger.setAttribute('aria-expanded', open);
-  mobileMenu.setAttribute('aria-hidden', !open);
-});
-
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    mobileMenu.setAttribute('aria-hidden', 'true');
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    mobileMenu.setAttribute('aria-hidden', !open);
   });
-});
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
+}
 
 // Theme switcher
 const THEMES = {
