@@ -705,6 +705,7 @@ footer {
   text-decoration: none;
   transition: color 0.2s;
 }
+.footer-link.active { color: var(--text); }
 .footer-link:hover { color: var(--accent); }
 
 .footer-copy {

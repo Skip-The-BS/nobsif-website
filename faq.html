@@ -28,7 +28,7 @@
   .doc-container { max-width: 720px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
 
   /* ── Header ── */
-  .doc-header { padding: 64px 0 48px; }
+  .doc-header { padding: 128px 0 48px; }
 
   .doc-eyebrow {
     font-family: 'Space Mono', monospace;
@@ -140,14 +140,35 @@
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 
-<!-- ══ STICKY NAV ══ -->
-<div class="container">
-  <nav class="doc-nav">
-    <a href="/" class="nav-logo">
-      <span class="nav-logo-no">NO </span><span class="nav-logo-bs">BS</span><span class="nav-logo-if">IF</span>
-    </a>
-    <a href="/" class="doc-back">&#8592; BACK</a>
-  </nav>
+<div id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-no">NO </span><span class="nav-logo-bs">BS</span><span class="nav-logo-if">IF</span>
+      </a>
+      <div class="nav-links">
+        <a href="/#features" class="nav-link">FEATURES</a>
+        <a href="/#pricing" class="nav-link">PRICING</a>
+        <a href="/#themes" class="nav-link">THEMES</a>
+        <a href="/privacy" class="nav-link">PRIVACY</a>
+        <a href="/accessibility" class="nav-link">ACCESSIBILITY</a>
+        <a href="/faq" class="nav-link active" aria-current="page">FAQ</a>
+        <a href="https://skipthebs.app/#support" target="_blank" rel="noopener external" class="nav-link">SUPPORT</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <a href="/#features" class="nav-mobile-link">FEATURES</a>
+      <a href="/#pricing" class="nav-mobile-link">PRICING</a>
+      <a href="/#themes" class="nav-mobile-link">THEMES</a>
+      <a href="/privacy" class="nav-mobile-link">PRIVACY</a>
+      <a href="/accessibility" class="nav-mobile-link">ACCESSIBILITY</a>
+      <a href="/faq" class="nav-mobile-link active" aria-current="page">FAQ</a>
+      <a href="https://skipthebs.app/#support" target="_blank" rel="noopener external" class="nav-mobile-link">SUPPORT &#8599;</a>
+    </div>
+  </div>
 </div>
 
 <div class="doc-container">
@@ -311,11 +332,13 @@
       <div class="footer-inner">
         <a href="/" class="footer-logo"><span class="nav-logo-no">NO </span><span class="nav-logo-bs">BS</span><span class="nav-logo-if">IF</span></a>
         <div class="footer-links">
+          <a href="/#features" class="footer-link">FEATURES</a>
+          <a href="/#pricing" class="footer-link">PRICING</a>
+          <a href="/#themes" class="footer-link">THEMES</a>
           <a href="/privacy" class="footer-link">PRIVACY</a>
           <a href="/accessibility" class="footer-link">ACCESSIBILITY</a>
-          <a href="/faq" class="footer-link">FAQ</a>
+          <a href="/faq" class="footer-link active" aria-current="page">FAQ</a>
           <a href="https://skipthebs.app/#support" target="_blank" rel="noopener external" class="footer-link">SUPPORT</a>
-          <a href="https://skipthebs.app" target="_blank" rel="noopener external" class="footer-link">SKIP THE BS &#8599;</a>
         </div>
         <div class="footer-copy">&#169; 2026 SKIP THE BS</div>
       </div>
