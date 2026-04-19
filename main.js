@@ -1,4 +1,5 @@
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pendingHomepageHashKey = 'pendingHomepageHash';
 
 // Scroll reveal
 if (prefersReducedMotion) {
@@ -54,16 +55,38 @@ document.querySelectorAll('.nav-link, .nav-mobile-link').forEach(link => {
   }
 });
 
+// Smooth redirected section jumps back onto the homepage.
+if (window.location.pathname === '/') {
+  const pendingHash = sessionStorage.getItem(pendingHomepageHashKey);
+  if (pendingHash && pendingHash.startsWith('/#')) {
+    const target = document.getElementById(pendingHash.slice(2));
+    sessionStorage.removeItem(pendingHomepageHashKey);
+    if (target) {
+      window.scrollTo(0, 0);
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        history.replaceState(null, '', pendingHash);
+      });
+    }
+  }
+}
+
 // Hybrid nav: smooth scroll on homepage, navigate on other pages
 document.querySelectorAll('a[href^="/#"]').forEach(link => {
   link.addEventListener('click', e => {
-    const id = link.getAttribute('href').slice(2);
+    const href = link.getAttribute('href');
+    const id = href.slice(2);
     const target = document.getElementById(id);
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-      history.pushState(null, '', link.getAttribute('href'));
+      history.pushState(null, '', href);
+      return;
     }
+
+    sessionStorage.setItem(pendingHomepageHashKey, href);
+    e.preventDefault();
+    window.location.href = '/';
   });
 });
 
