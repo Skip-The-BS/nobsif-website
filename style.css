@@ -182,17 +182,18 @@ body::before {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 18px;
 }
 
 .nav-link {
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--dimmed);
   letter-spacing: 0.08em;
   text-decoration: none;
   transition: color 0.2s;
   position: relative;
+  white-space: nowrap;
 }
 .nav-link::after {
   content: '';
