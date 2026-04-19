@@ -540,9 +540,14 @@ body::before {
   font-weight: 300;
 }
 
+/* -- Accessibility -- */
+#accessibility {
+  padding: 0 0 80px 0;
+}
+
 /* ── Pricing ── */
 #pricing {
-  padding: 80px 0;
+  padding: 0 0 80px 0;
   scroll-margin-top: 104px;
 }
 
@@ -616,7 +621,7 @@ body::before {
 
 /* ── Themes ── */
 #themes {
-  padding: 80px 0;
+  padding: 0 0 80px 0;
   scroll-margin-top: 104px;
 }
 

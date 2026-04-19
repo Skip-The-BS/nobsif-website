@@ -26,7 +26,7 @@ if (nav) {
 }
 
 // Active nav link on scroll
-const sections = ['features', 'pricing', 'themes'];
+const sections = ['features', 'pricing'];
 const navLinks = document.querySelectorAll('.nav-link, .nav-mobile-link');
 
 if (!prefersReducedMotion) {
